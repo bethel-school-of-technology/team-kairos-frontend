@@ -8,6 +8,7 @@ import { EditJobComponent } from './edit-job/edit-job.component';
 const routes: Routes = [
   {
     path:'',
+    pathMatch: 'full',
     component: JobListComponent
   },
   {
