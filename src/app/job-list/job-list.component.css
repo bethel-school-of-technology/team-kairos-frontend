@@ -1,0 +1,9 @@
+input {
+    font-size: 1rem;
+}
+
+.job-card {
+    border: 1px grey solid;
+    background-color: white;
+    padding: 20px;
+}
