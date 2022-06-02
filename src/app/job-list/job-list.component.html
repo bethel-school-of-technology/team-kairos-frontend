@@ -1,19 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-  <a class="navbar-brand" href="#">jobPLS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a [routerLink]="['']" class="nav-link">Jobs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/createjob']">Submit Job</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <a class="navbar-brand" href="#">jobPLS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a [routerLink]="['']" class="nav-link">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactus']">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/createjob']">Submit Job</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+<h1>This is the main page</h1>
+
+<div class="container" id="search-container">
+    <div class="searchBox row justify-content-center">
+        <label class="col-auto text-primary" for="search">Search Jobs:</label>
+        <input class="col" type="search" id="search" placeholder="Search Job Listings"/>
+    </div>
+</div>
+<div class="container" id="list-of-jobs">
+    <div class="row job-card container" *ngFor="let job of jobs">
+        <h3 class="row text-primary">{{job.jobTitle}}</h3>
+        <p class="row">{{job.description}}</p>
+    </div>
+</div>
