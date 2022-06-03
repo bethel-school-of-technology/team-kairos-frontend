@@ -35,8 +35,8 @@
       <!--Grid column-->
      <div id="contactForm" class="d-flex justify-content-center">
        <!-- <div class="col-md-9 mb-md-0 mb-5"> -->
-          <form id="contact-form" name="contact-form" action="https://formspree.io/f/mrgjjqey"
-          method="POST">
+          <form method="post" id="contact-form" name="contact-form" (ngSubmit)="createContact()"
+          >
 
               <!--Grid row-->
               <div class="row">
@@ -44,7 +44,7 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
-                          <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+                          <input type="text" id="name" name="name" class="form-control" placeholder="Name"  [(ngModel)]="newContact.name">
                           <label for="name" class="" ></label>
                       </div>
                   </div>
@@ -53,7 +53,7 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
-                          <input type="text" id="email" name="email" class="form-control" placeholder="Your Email">
+                          <input type="text" id="email" name="email" class="form-control" placeholder="Your Email" [(ngModel)]="newContact.email">
                           <label for="email" class=""></label>
                       </div>
                   </div>
@@ -66,7 +66,7 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="md-form mb-0">
-                          <input type="text" id="subject" name="subject" class="form-control" placeholder="Questions, Comments, or Concerns">
+                          <input type="text" id="subject" name="subject" class="form-control" placeholder="Questions, Comments, or Concerns" [(ngModel)]="newContact.subject">
                           <label for="subject" class=""></label>
                       </div>
                   </div>
@@ -80,7 +80,7 @@
                   <div class="col-md-12">
 
                       <div class="md-form">
-                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Your Message"></textarea>
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Your Message" [(ngModel)]="newContact.message"></textarea >
                           <label for="message"></label>
                       </div>
 
