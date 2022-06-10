@@ -19,4 +19,6 @@ export class JobListComponent implements OnInit {
       {this.JobPosts = results});
   }
 
+  
+
 }
