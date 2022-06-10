@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from '../models/job';
+import { JobPost } from '../models/job';
 import { JobsService } from '../services/jobs.service';
 
 
@@ -10,7 +10,7 @@ import { JobsService } from '../services/jobs.service';
 })
 export class JobListComponent implements OnInit {
 
-  jobs: Job[];
+  jobs: JobPost[];
 
   constructor(private jobsService: JobsService) { }
 
