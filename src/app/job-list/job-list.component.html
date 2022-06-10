@@ -27,8 +27,8 @@
     </div>
 </div>
 <div class="container" id="list-of-jobs">
-    <div class="row job-card container" *ngFor="let job of jobs">
-        <h3 class="row text-primary">{{jobPost.jobTitle}}</h3>
-        <p class="row">{{jobPost.description}}</p>
+    <div class="row job-card container" *ngFor="let JobPost of JobPosts">
+        <h3 class="row text-primary">{{JobPost.jobTitle}}</h3>
+        <p class="row">{{JobPost.jobDescription}}</p>
     </div>
 </div>
