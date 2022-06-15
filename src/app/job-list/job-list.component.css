@@ -6,4 +6,60 @@ input {
     border: 1px grey solid;
     background-color: white;
     padding: 20px;
+    border-radius: 15%;
+}
+
+.job-card + .job-card {
+    padding-top: 20px;
+}
+
+.job-card:hover, .job-card:focus {
+    background-color: rgb(215, 214, 214);
+}
+
+.myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,.4);
+}
+
+.modal-content{
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,.3), 0 8px 12px 0 rgba(0,0,0,.2);
+    animation-name: openmodal;
+    animation-duration: .33s;
+    background-image: linear-gradient(to bottom right, rgb(146, 201, 253),rgb(239, 247, 255),rgb(249, 249, 249), white);
+}
+
+#applybtn {
+    background-color:rgb(146, 201, 253) ;
+    padding: .5em;
+    border: 0;
+}
+
+.closeBtn {
+    color: rgb(136, 136, 136);
+    float: right;
+    font-size: 1rem;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+@keyframes openmodal {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
