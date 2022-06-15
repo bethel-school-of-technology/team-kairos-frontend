@@ -8,11 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class JobsService {
 
-  baseUrl = "http://localhost:7172/api/jobPost"
+  baseUrl = "https://localhost:7172/api/JobPost"
 
   constructor(private http: HttpClient) { }
 
   getJobList(): Observable<JobPost[]> {
     return this.http.get<JobPost[]>(this.baseUrl);
   }
+
+  createjob(job: JobPost){
+    return this.http.post(this.baseUrl, job);
+}
 }
