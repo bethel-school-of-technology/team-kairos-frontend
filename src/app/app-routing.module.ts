@@ -4,6 +4,8 @@ import { JobListComponent } from './job-list/job-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CreateJobComponent } from './create-job/create-job.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'contactus',
     component: ContactUsComponent
+  },
+  {
+    path: 'signup',
+  component:SignUpComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

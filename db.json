@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signupUsers": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "firstName": "Jan",
+      "lastName": "Pevny",
+      "email": "Jpev@gmail.com",
+      "password": "2345",
+      "id": 3
+    },
+    {
+      "firstName": "Tyler",
+      "lastName": "Gavrity",
+      "email": "tgavrity@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "firstName": "John",
+      "lastName": "Pue",
+      "email": "Jpue@gmail.com",
+      "password": "1234",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$a.iFAbS5osv.Eum7/MA08e8XehBX5RrDl1nWUkiJGY1LQhrR8fvD.",
+      "id": 1
+    },
+    {
+      "email": "olivier2@mail.com",
+      "password": "$2a$10$g03Ja5JnqAH3uZEG2pHd/OBiy1cV2BihKQa7Dw1Qwa/a5/ZjYARJ.",
+      "id": 2
+    },
+    {
+      "email": "tgavrity@gmail.com",
+      "password": "$2a$10$nlhIuw/o8kHddlg3TNH85u3gcgdNk01VgPbh5J96Ll4bJk02MZMVe",
+      "firstName": "Tyler",
+      "lastName": "Gavrity",
+      "id": 3
+    },
+    {
+      "email": "jmorris@gmail.com",
+      "password": "$2a$10$LRTbEaiTOpTRI68smhH0muPrTt6/fsAg10YMUGy.3jpjStsjSglD2",
+      "firstName": "Jaron",
+      "lastName": "Morris",
+      "id": 4
+    },
+    {
+      "email": "jschirmer@gmail.com",
+      "password": "$2a$10$rLGAwj4ClIjfmvOAfqKgg.Mx1xAUG4iNei60KM./TRUDyDN/uweTe",
+      "firstName": "Jack",
+      "lastName": "Schirmer",
+      "id": 5
+    }
+  ]
+}

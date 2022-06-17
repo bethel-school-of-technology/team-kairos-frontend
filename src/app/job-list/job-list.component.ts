@@ -17,8 +17,20 @@ export class JobListComponent implements OnInit {
   ngOnInit(): void {
     this.jobsService.getJobList().subscribe(results =>
       {this.JobPosts = results});
+    
+      const logOutBtn = document.getElementById('logOutBtn');
+      logOutBtn.addEventListener('click', function(){
+        console.log('hello');
+        localStorage.removeItem('jwt');
+      })
+
   }
 
-  
+  logOut(){
+    console.log("Hello");
+    // localStorage.removeItem('jwt');
+  }
+
+  // localStorage.removeItem('jwt');
 
 }
