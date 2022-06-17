@@ -13,9 +13,13 @@ export class JobListComponent implements OnInit {
 
   JobPosts: JobPost[];
 
+  public userFirstName: string|null;
+
   constructor(private jobsService: JobsService) { }
 
   ngOnInit(): void {
+    this.userFirstName = localStorage.getItem('userFirstName');
+
     this.jobsService.getJobList().subscribe(results =>
       {this.JobPosts = results});
     

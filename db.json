@@ -85,6 +85,13 @@
       "firstName": "Kaitlin",
       "lastName": "Dalgo",
       "id": 7
+    },
+    {
+      "email": "jpevny@gmail.com",
+      "password": "$2a$10$ozXIQBGkD4h/BQFYa2Je7.01gDVS3BuB8IEsCk1uf3Z3x.jcNuiV6",
+      "firstName": "Jan",
+      "lastName": "Pevny",
+      "id": 8
     }
   ]
 }

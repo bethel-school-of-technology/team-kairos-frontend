@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
   login(){
     this.http.post("http://localhost:3000/login", this.loginForm.value)
     .subscribe(response => {
-      const token = (<any>response).token;
+      const token = (<any>response).accessToken;
       localStorage.setItem("jwt", token);
+      localStorage.setItem("userFirstName", (<any>response).user.firstName);
       this.invalidLogin = false;
       this.router.navigate(["/"]);
     },err => {
