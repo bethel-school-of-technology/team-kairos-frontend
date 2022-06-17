@@ -71,6 +71,20 @@
       "firstName": "Jack",
       "lastName": "Schirmer",
       "id": 5
+    },
+    {
+      "email": "supercait@dub.com",
+      "password": "$2a$10$ekJP/.fhUQ6dxEEMede8a.dyJlve6OoP/nkGffLp9yBub/DZDEbNq",
+      "firstName": "Caitlin",
+      "lastName": "Hidalgo",
+      "id": 6
+    },
+    {
+      "email": "kaitsiscool@gmail.com",
+      "password": "$2a$10$MsrVwiQajW/khbof70D1r.sg4rUqpLqRmfI3QwdofJje4I7pPcV1m",
+      "firstName": "Kaitlin",
+      "lastName": "Dalgo",
+      "id": 7
     }
   ]
 }
