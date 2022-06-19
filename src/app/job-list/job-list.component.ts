@@ -13,10 +13,23 @@ export class JobListComponent implements OnInit {
 
   JobPosts: JobPost[];
 
+  public userFirstName: string|null;
+
   constructor(private jobsService: JobsService) { }
 
   ngOnInit(): void {
-    this.jobsService.getJobList().subscribe(results => { this.JobPosts = results });
+    this.userFirstName = localStorage.getItem('userFirstName');
+
+    this.jobsService.getJobList().subscribe(results =>
+      {this.JobPosts = results});
+    
+      const logOutBtn = document.getElementById('logOutBtn');
+      logOutBtn.addEventListener('click', function(){
+        console.log('hello');
+        localStorage.removeItem('jwt');
+      })
+
+  
 
     // Show Modal on click
     var modal = document.getElementById('jobModal');
