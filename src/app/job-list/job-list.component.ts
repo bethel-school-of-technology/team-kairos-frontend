@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobPost } from '../models/job';
 import { JobsService } from '../services/jobs.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 declare var jQuery: any;
 
 
@@ -13,20 +14,37 @@ export class JobListComponent implements OnInit {
 
   JobPosts: JobPost[];
 
+  oldJob: JobPost;
+
   public userFirstName: string|null;
 
-  constructor(private jobsService: JobsService) { }
+  constructor(private jobsService: JobsService, private jwtHelper: JwtHelperService) { }
+
+  isUserAuthenticated() {
+    const token: string = localStorage.getItem("jwt");
+    if(token && !this.jwtHelper.isTokenExpired(token)){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
   ngOnInit(): void {
+  
     this.userFirstName = localStorage.getItem('userFirstName');
 
     this.jobsService.getJobList().subscribe(results =>
       {this.JobPosts = results});
+
+     
     
       const logOutBtn = document.getElementById('logOutBtn');
       logOutBtn.addEventListener('click', function(){
         console.log('hello');
         localStorage.removeItem('jwt');
+        localStorage.removeItem('userFirstName');
+        window.location.reload();
       })
 
   
@@ -57,6 +75,19 @@ export class JobListComponent implements OnInit {
         modal.style.display = 'none';
       }
     }
+  }
+
+  deleteJob(){
+    this.jobsService.deleteJob(this.oldJob).subscribe(()=> {
+      alert('Job has been deleted')
+      // this.router.navigate(['/']);
+    },err =>{
+      console.log("Error")
+    });
+    
+
+
+
   }
 
 

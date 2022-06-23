@@ -1,5 +1,5 @@
 <h1>This is the main page</h1>
-<h2 *ngIf="userFirstName">Hello {{ userFirstName }}</h2>
+<h2 *ngIf="userFirstName"><span class="badge badge-secondary">Logged In User</span>Hello {{ userFirstName }}</h2>
 
 <div class="container" id="search-container">
   <div class="searchBox row justify-content-center">
@@ -11,7 +11,9 @@
 <div class="container" id="list-of-jobs">
   <div class="row job-card container" *ngFor="let JobPost of JobPosts" onclick="showModal()">
     <h3 class="row text-primary">{{JobPost.jobTitle}}</h3>
+    <button class="btn" *ngIf="userFirstName" (ngSubmit)="deleteJob()" > Delete Job </button>
     <p class="row">{{JobPost.jobDescription}}</p>
+    
   </div>
 </div>
 <!-- Modal -->
@@ -27,6 +29,7 @@
         <p>Pay Range</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer. Justo laoreet sit amet cursus sit amet dictum sit. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Ut tortor pretium viverra suspendisse potenti. Eu non diam phasellus vestibulum lorem. Sed elementum tempus egestas sed sed risus pretium quam. Nunc sed id semper risus in hendrerit gravida rutrum. Aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus. Posuere morbi leo urna molestie at elementum eu facilisis. Sit amet nisl purus in mollis. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Convallis aenean et tortor at risus viverra adipiscing. Venenatis cras sed felis eget velit aliquet sagittis id consectetur. Nec feugiat in fermentum posuere urna nec tincidunt. Eget arcu dictum varius duis at consectetur. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. In dictum non consectetur a erat nam at lectus urna. Est pellentesque elit ullamcorper dignissim cras. Aliquet porttitor lacus luctus accumsan tortor posuere.</p>
     </div>
+    
   <div class="modal-footer row justify-content-center">
     <button id="applybtn" class="col-2">Apply Now</button>
   </div>
@@ -37,3 +40,4 @@
 
 <!-- Temporary modal button -->
 <button id="openModalBtn" class="btn">Click Me</button>
+

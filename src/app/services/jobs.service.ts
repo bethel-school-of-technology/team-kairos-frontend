@@ -27,4 +27,9 @@ export class JobsService {
     return this.http.post(this.jsonServer, user)
   }
 
+  deleteJob(job: JobPost){
+    const url = this.baseUrl + job.id;
+    return this.http.delete(url);
+
+}
 }
