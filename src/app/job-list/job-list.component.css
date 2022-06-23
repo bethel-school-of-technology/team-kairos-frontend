@@ -6,16 +6,18 @@ input {
     border: 1px grey solid;
     background-color: white;
     padding: 20px;
-    border-radius: 15%;
+    border-radius: .35rem;
 }
 
-.job-card + .job-card {
-    padding-top: 20px;
+.job-card-container + .job-card-container {
+    padding-top: .5rem;
 }
-
 .job-card:hover, .job-card:focus {
     background-color: rgb(215, 214, 214);
+    cursor: pointer;
 }
+
+
 
 .myModal {
     display: none;

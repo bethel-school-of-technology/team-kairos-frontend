@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { JobPost } from '../models/job';
 import { JobsService } from '../services/jobs.service';
-declare var jQuery: any;
+import $ from 'jquery';
 
 
 @Component({
@@ -12,52 +12,29 @@ declare var jQuery: any;
 export class JobListComponent implements OnInit {
 
   JobPosts: JobPost[];
+  currentJobPost;
 
-  constructor(private jobsService: JobsService) { }
+  constructor(private jobsService: JobsService, private elem: ElementRef) { }
 
   ngOnInit(): void {
-    this.jobsService.getJobList().subscribe(results => { this.JobPosts = results });
-
-    // Show Modal on click
-    var modal = document.getElementById('jobModal');
-    var closeBtn = document.getElementById('closeBtn');
-    var modalBtn = document.getElementById('openModalBtn')
-
-    //Listen for click
-    modalBtn.addEventListener('click', openModal);
-
-    //Open Modal function
-    function openModal() {
-      modal.style.display = 'block';
-    }
-
-    //listen for close click
-    closeBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', clickOutside);
-
-    //Close Modal function
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-    function clickOutside(e) {
-      if (e.target == modal){
-        modal.style.display = 'none';
-      }
-    }
+    this.jobsService.getJobList().subscribe(results => {
+      this.JobPosts = results; 
+    });
   }
 
-
-
+  closeModal(job: JobPost) {
+    // Set passed Job to current JobPost to show modal
+    this.currentJobPost = job;
+    var modal = document.getElementById('jobModal' + job.id);
+    // display modal
+    modal.style.display = 'none';
+  }
+  
+  showJobModal(job: JobPost) {
+    // Set passed Job to current JobPost to show modal
+    this.currentJobPost = job;
+    var modal = document.getElementById('jobModal' + job.id);
+    // hide modal
+    modal.style.display = 'block';
+  }
 }
-
-// // Show Modal on click
-// var modal = document.getElementById('jobModal');
-// var closeBtn = document.getElementById('closeBtn');
-// var modalBtn = document.getElementById('openModalBtn')
-
-// //Listen for click
-// modalBtn.addEventListener('click', openModal);
-
-// function openModal(){
-//   console.log('123');
-// }
