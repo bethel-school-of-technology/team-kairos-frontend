@@ -8,6 +8,9 @@ input {
     padding: 20px;
     border-radius: .35rem;
 }
+nav {
+    padding: 20px;
+}
 
 .job-card-container + .job-card-container {
     padding-top: .5rem;
