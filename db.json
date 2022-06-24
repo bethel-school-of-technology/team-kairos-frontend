@@ -92,6 +92,20 @@
       "firstName": "Jan",
       "lastName": "Pevny",
       "id": 8
+    },
+    {
+      "email": "mariog@gmail.com",
+      "password": "$2a$10$rJZT8RmO9JtRWJe/LDd9Deh/k6Mq72dI8.PZanldbcQrtDQRCqFve",
+      "firstName": "Mario",
+      "lastName": "Gonzales",
+      "id": 9
+    },
+    {
+      "email": "johnpue@gmail.com",
+      "password": "$2a$10$eWfis4GxiaNv8qX/C2AP.uUiGJ2uH/ZTfl4vLZ.mJsKcdFg8giz/y",
+      "firstName": "John",
+      "lastName": "Pue",
+      "id": 10
     }
   ]
 }

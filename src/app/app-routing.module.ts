@@ -6,12 +6,16 @@ import { CreateJobComponent } from './create-job/create-job.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { UnauthPageComponent } from './unauth-page/unauth-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { DeletePostComponent } from './delete-post/delete-post.component';
 
 const routes: Routes = [
   {
     path:'',
     pathMatch: 'full',
-    component: JobListComponent
+    component: JobListComponent,
+    
   },
   {
     path: 'createjob',
@@ -19,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'editjob',
-    component: EditJobComponent
+    component: EditJobComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'contactus',
@@ -32,6 +37,15 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'error',
+    component: UnauthPageComponent,
+    
+  },
+  {
+    path: 'delete',
+    component: DeletePostComponent
   }
 ];
 
