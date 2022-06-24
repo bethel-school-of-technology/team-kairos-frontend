@@ -7,37 +7,35 @@
     <input class="col" type="search" id="search" placeholder="Search Job Listings" />
   </div>
 </div>
+<br>
 <!-- Generate postings dynamically for jobs -->
 <div class="container" id="list-of-jobs">
-  <div class="row job-card container" *ngFor="let JobPost of JobPosts" onclick="showModal()">
-    <h3 class="row text-primary">{{JobPost.jobTitle}}</h3>
-    <button class="btn" *ngIf="userFirstName" (ngSubmit)="deleteJob()" > Delete Job </button>
-    <p class="row">{{JobPost.jobDescription}}</p>
-    
+  <div class="job-card-container" *ngFor="let JobPost of JobPosts">
+    <div class="row job-card container" (click)="showJobModal(JobPost)">
+      <h3 class="row text-primary">{{JobPost.jobTitle}}</h3>
+      <div class="row comp-pay justify-content-start">
+        <h4 class="text-secondary pay-range col-auto">${{JobPost.minPayRange}} - ${{JobPost.maxPayRange}} |
+          {{JobPost.jobCompany}} | {{JobPost.jobLocation}}</h4>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div id="jobModal{{JobPost.id}}" class="myModal container-fluid">
+      <div class="modal-content" id="modalContent">
+        <div class="modal-header row justify-content-between">
+          <h2 class="modal-title col-10">{{JobPost.jobTitle}}</h2>
+          <span class="closeBtn col-auto ml-auto" id="closeBtn" (click)="closeModal(JobPost)">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p>{{JobPost.jobCompany}}</p>
+          <p>{{JobPost.jobLocation}}</p>
+          <p>${{JobPost.minPayRange}} - ${{JobPost.maxPayRange}}</p>
+          <p>{{JobPost.jobDescription}}</p>
+        </div>
+        <div class="modal-footer row justify-content-center">
+          <a><button id="applybtn" class="col-sm-auto col-lg-2">Apply Now</button></a>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
-<!-- Modal -->
-<div id="jobModal" class="myModal container-fluid">
-  <div class="modal-content">
-    <div class="modal-header row justify-content-between">
-      <h2 class="modal-title col-10">This will be the title</h2>
-      <span class="closeBtn col-auto ml-auto" id="closeBtn">&times;</span>
-    </div>
-    <div class="modal-body">
-        <p>Company Name</p>
-        <p>Location Here</p>
-        <p>Pay Range</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer. Justo laoreet sit amet cursus sit amet dictum sit. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Ut tortor pretium viverra suspendisse potenti. Eu non diam phasellus vestibulum lorem. Sed elementum tempus egestas sed sed risus pretium quam. Nunc sed id semper risus in hendrerit gravida rutrum. Aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus. Posuere morbi leo urna molestie at elementum eu facilisis. Sit amet nisl purus in mollis. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. Convallis aenean et tortor at risus viverra adipiscing. Venenatis cras sed felis eget velit aliquet sagittis id consectetur. Nec feugiat in fermentum posuere urna nec tincidunt. Eget arcu dictum varius duis at consectetur. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. In dictum non consectetur a erat nam at lectus urna. Est pellentesque elit ullamcorper dignissim cras. Aliquet porttitor lacus luctus accumsan tortor posuere.</p>
-    </div>
-    
-  <div class="modal-footer row justify-content-center">
-    <button id="applybtn" class="col-2">Apply Now</button>
-  </div>
-
-  </div>
-</div>
-
-
-<!-- Temporary modal button -->
-<button id="openModalBtn" class="btn">Click Me</button>
-
