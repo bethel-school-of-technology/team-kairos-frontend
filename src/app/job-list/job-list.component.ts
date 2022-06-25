@@ -48,8 +48,10 @@ export class JobListComponent implements OnInit {
       })
   }
 
-  deleteJob(){
-    this.jobsService.deleteJob(this.oldJob).subscribe(()=> {
+  deleteJob(job: JobPost){
+    console.log('nope');
+    this.currentJobPost = job;
+    this.jobsService.deleteJob(this.currentJobPost.id).subscribe(()=> {
       alert('Job has been deleted')
       // this.router.navigate(['/']);
     },err =>{
