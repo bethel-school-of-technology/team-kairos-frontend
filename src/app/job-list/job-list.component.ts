@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { JobPost } from '../models/job';
 import { JobsService } from '../services/jobs.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class JobListComponent implements OnInit {
 
   public userFirstName: string|null;
 
-  constructor(private jobsService: JobsService, private jwtHelper: JwtHelperService) { }
+  constructor(private jobsService: JobsService, private jwtHelper: JwtHelperService, private router: Router) { }
 
   isUserAuthenticated() {
     const token: string = localStorage.getItem("jwt");
@@ -57,9 +58,11 @@ export class JobListComponent implements OnInit {
     },err =>{
       console.log("Error")
     });
-    
+  }
 
-
+  editJob(job: JobPost){
+    this.currentJobPost = job;
+    this.router.navigate(['/editjob/' + job.id])
 
   }
 

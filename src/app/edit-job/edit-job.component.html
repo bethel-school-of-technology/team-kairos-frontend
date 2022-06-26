@@ -1,1 +1,108 @@
-<p>Cannot reach unless authorized</p>
+<div class="d-flex justify-content-center">
+    <section class="mb-4">
+  
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Edit Job</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Once all fields have been entered please press submit</p>
+  
+    <div class="row">
+  
+        <!--Grid column-->
+       <div id="contactForm" class="d-flex justify-content-center">
+         <!-- <div class="col-md-9 mb-md-0 mb-5"> -->
+            <form method="post" id="editJob-form" name="createJob-form" (ngSubmit)="editJob()"
+            >
+  
+                <!--Grid row-->
+                <div class="row">
+  
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <label for="Company" class="" >Company</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Company" value="{{currentJobPost.jobCompany}}" [(ngModel)]="currentJobPost.jobCompany">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+  
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <label for="jobTitle" class="">Job Title</label>
+                            <input type="text" id="jobTitle" name="jobTitle" class="form-control" placeholder="Job Title" value="{{currentJobPost.jobTitle}}" [(ngModel)]="currentJobPost.jobTitle">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+  
+                </div>
+                <!--Grid row-->
+  
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <label for="subject" class="">Location</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Job Location" value="{{currentJobPost.jobLocation}}" [(ngModel)]="currentJobPost.jobLocation">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+  
+                <!--Grid column-->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <label for="minPayRange" class="" >Minimum Pay</label>
+                      <input type="text" id="minPayRange" name="minPayRange" class="form-control" placeholder="Min" value="{{currentJobPost.minPayRange}}"  [(ngModel)]="currentJobPost.minPayRange">
+                  </div>
+              </div>
+              <!--Grid column-->
+  
+              <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <label for="maxPayRange" class="">Max Pay</label>
+                      <input type="text" id="maxPayRange" name="maxPayRange" class="form-control" placeholder="Max" value="{{currentJobPost.maxPayRange}}" [(ngModel)]="currentJobPost.maxPayRange">
+                  </div>
+              </div>
+              <!--Grid column-->
+  
+                <!--Grid row-->
+                <div class="row">
+  
+                    <!--Grid column-->
+                    <div class="col-md-12">
+  
+                        <div class="md-form">
+                          <label for="jobDescription">Description</label>
+                            <textarea type="text" id="jobDescription" name="jobDescription" rows="2" class="form-control md-textarea" placeholder="Include a brief description as to the responsibilities of the job" value="{{currentJobPost.jobDescription}}" [(ngModel)]="currentJobPost.jobDescription"></textarea >
+                        </div>
+  
+                    </div>
+                </div>
+                <!--Grid row-->
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <label for="url" class="">URL</label>
+                          <input type="text" id="url" name="url" class="form-control" placeholder="https://www.example.com/" value="{{currentJobPost.jobURL}}" [(ngModel)]="currentJobPost.jobURL">
+                          <br>
+                      </div>
+                  </div>
+              </div>
+                <!--Grid row-->
+                <div class="d-flex justify-content-center">
+                <input class="btn btn-primary" type="submit" value="Submit">
+              </div>
+               
+  
+            </form>
+          <div class="status"></div>
+        </div>
+            
+  
+    </div>
+  
+  </section>
+  </div>
+  
