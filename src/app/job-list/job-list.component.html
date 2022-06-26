@@ -33,7 +33,7 @@
           
         </div>
         <div class="modal-footer row justify-content-center">
-          <a><button id="applybtn" class="col-sm-auto col-lg-2">Apply Now</button></a>
+          <a href="{{JobPost.jobURL}}" target="_blank"><button id="applybtn" class="col-sm-auto col-lg-2">Apply Now</button></a>
           <button class="btn" *ngIf="userFirstName" (click)="deleteJob(JobPost)" > Delete Job </button>
           <button class="btn" *ngIf="userFirstName" (click)="editJob(JobPost)" > Edit Job </button>
         </div>
