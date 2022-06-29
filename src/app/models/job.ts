@@ -4,6 +4,7 @@ export class JobPost {
     jobTitle?: string;
     jobDescription?: string;
     jobLocation?: string;
+    jobURL: string;
     minPayRange: Number;
     maxPayRange?: Number;
 }

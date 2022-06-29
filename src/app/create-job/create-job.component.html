@@ -20,8 +20,8 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
+                        <label for="Company" class="" >Company</label>
                           <input type="text" id="name" name="name" class="form-control" placeholder="Company"  [(ngModel)]="newJob.jobCompany">
-                          <label for="Company" class="" ></label>
                       </div>
                   </div>
                   <!--Grid column-->
@@ -29,8 +29,8 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
+                        <label for="jobTitle" class="">Job Title</label>
                           <input type="text" id="jobTitle" name="jobTitle" class="form-control" placeholder="Job Title" [(ngModel)]="newJob.jobTitle">
-                          <label for="jobTitle" class=""></label>
                       </div>
                   </div>
                   <!--Grid column-->
@@ -42,8 +42,8 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="md-form mb-0">
+                        <label for="subject" class="">Location</label>
                           <input type="text" id="subject" name="subject" class="form-control" placeholder="Job Location" [(ngModel)]="newJob.jobLocation">
-                          <label for="subject" class=""></label>
                       </div>
                   </div>
               </div>
@@ -52,8 +52,8 @@
               <!--Grid column-->
               <div class="col-md-6">
                 <div class="md-form mb-0">
+                    <label for="minPayRange" class="" >Minimum Pay</label>
                     <input type="text" id="minPayRange" name="minPayRange" class="form-control" placeholder="Min"  [(ngModel)]="newJob.minPayRange">
-                    <label for="minPayRange" class="" ></label>
                 </div>
             </div>
             <!--Grid column-->
@@ -61,8 +61,8 @@
             <!--Grid column-->
             <div class="col-md-6">
                 <div class="md-form mb-0">
+                    <label for="maxPayRange" class="">Max Pay</label>
                     <input type="text" id="maxPayRange" name="maxPayRange" class="form-control" placeholder="Max" [(ngModel)]="newJob.maxPayRange">
-                    <label for="maxPayRange" class=""></label>
                 </div>
             </div>
             <!--Grid column-->
@@ -74,12 +74,22 @@
                   <div class="col-md-12">
 
                       <div class="md-form">
-                          <textarea type="text" id="jobDescription" name="jobDescription" rows="2" class="form-control md-textarea" placeholder="JobDescription" [(ngModel)]="newJob.jobDescription"></textarea >
-                          <label for="jobDescription"></label>
+                        <label for="jobDescription">Description</label>
+                          <textarea type="text" id="jobDescription" name="jobDescription" rows="2" class="form-control md-textarea" placeholder="Include a brief description as to the responsibilities of the job" [(ngModel)]="newJob.jobDescription"></textarea >
                       </div>
 
                   </div>
               </div>
+              <!--Grid row-->
+              <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <label for="url" class="">URL</label>
+                        <input type="text" id="url" name="url" class="form-control" placeholder="https://www.example.com/" [(ngModel)]="newJob.jobURL">
+                        <br>
+                    </div>
+                </div>
+            </div>
               <!--Grid row-->
               <div class="d-flex justify-content-center">
               <input class="btn btn-primary" type="submit" value="Submit">

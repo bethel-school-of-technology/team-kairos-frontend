@@ -22,7 +22,7 @@ const routes: Routes = [
     component: CreateJobComponent
   },
   {
-    path: 'editjob',
+    path: 'editjob/:id',
     component: EditJobComponent,
     canActivate: [AuthGuardService]
   },

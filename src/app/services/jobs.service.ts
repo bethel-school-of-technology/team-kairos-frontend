@@ -30,6 +30,13 @@ export class JobsService {
   deleteJob(id: Number){
     const url = this.baseUrl + "/"+ id;
     return this.http.delete(url);
+  }
 
-}
+  editJob(job: JobPost){
+    return this.http.put(this.baseUrl, job)
+  }
+
+  find(id: Number){
+    return this.http.get<JobPost>(this.baseUrl + "/" + id)
+  }
 }
