@@ -68,3 +68,54 @@ div {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+p{
+    color:black;
+}
+#page-container {
+    
+    text-align: center;
+    background-color: hsla(205,46%, 30%, 1);
+    height:25px;
+    padding: 0px;
+    bottom: 0;
+    width:100%;
+    position: fixed;
+   
+    
+  }
+#welcome{
+    padding-top: 5rem;
+    color:#0d6efd;
+    justify-content:end;
+}
+  h1{
+      color:white;
+      padding:25px;
+      text-align: center;
+  }
+
+  .bgimg {
+    background-image: url('src\images\sky.jpg');
+    width: 100%;
+   height: 600px;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: .8;
+  }
+
+ #headerText{
+    
+    padding-top: 250px;
+    padding-bottom: 303px;
+    background-color: rgba(0,0,0,.6);
+  }
+
+  #searchLabel{
+      
+      font-size: 2rem;
+  }
+
+  #frontPageDisplay + #search-container{
+      padding-top: 5rem;
+  }

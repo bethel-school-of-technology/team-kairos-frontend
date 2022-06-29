@@ -1,10 +1,28 @@
-<h1>This is the main page</h1>
-<h2 *ngIf="userFirstName"><span class="badge badge-secondary">Logged In User</span>Hello {{ userFirstName }}</h2>
+<!-- <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="app/images/sky.jpg" alt="sky" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b></b></span> <span class="w3-hide-small w3-text-light-grey">Congrats on taking the next step towards your career!</span></h1>
+  </div>
+</header> -->
 
+<div id='frontPageDisplay'class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-middle">
+    <h1 id="headerText"class="w3-jumbo w3-animate-top">Congrats on taking the next step towards your career!</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+  </div>
+</div>
+
+<h2 id="welcome" *ngIf="userFirstName"><span class="badge badge-secondary">dfgjdfj</span>Welcome {{ userFirstName }}</h2>
 <div class="container" id="search-container">
-  <div class="searchBox row justify-content-center">
-    <label class="col-auto text-primary" for="search">Search Jobs:</label>
-    <input class="col" type="search" id="search" placeholder="Search Job Listings" />
+  <div class="searchBox  row justify-content-center">
+    <label id="searchLabel" class="col-auto text-primary" for="search">Search Jobs:</label>
+    <input type="search" class="form-control mb-2 col-auto" id="search" placeholder="Search Job Listings">
+    <div class="row justify-content-center">
+    <button type="button" class="btn btn-primary col-md-2 col-sm-4">
+      Search<i class="fas fa-search"></i>
+    </button>
+  </div>
+   
   </div>
 </div>
 <br>
@@ -42,3 +60,6 @@
     </div>
   </div>
 </div>
+<footer id="page-container">
+<p>Team Kairos Est. 2022</p>
+</footer>

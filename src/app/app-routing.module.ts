@@ -45,7 +45,8 @@ const routes: Routes = [
   },
   {
     path: 'delete',
-    component: DeletePostComponent
+    component: DeletePostComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 
