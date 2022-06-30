@@ -21,6 +21,9 @@ export class CreateJobComponent implements OnInit {
   createJob(){
     this.service.createjob(this.newJob).subscribe(()=> {
       this.router.navigate(['/']);
+    },err =>{
+      alert("Please enter valid information");
+
     });
   }
 
