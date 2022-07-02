@@ -19,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'createjob',
-    component: CreateJobComponent
+    component: CreateJobComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'editjob/:id',

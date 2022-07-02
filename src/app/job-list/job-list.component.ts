@@ -33,7 +33,7 @@ export class JobListComponent implements OnInit {
 
   ngOnInit(): void {
   
-    this.userFirstName = localStorage.getItem('userFirstName');
+    this.userFirstName = localStorage.getItem('firstName');
 
     this.jobsService.getJobList().subscribe(results =>
       {this.JobPosts = results
@@ -46,7 +46,7 @@ export class JobListComponent implements OnInit {
       logOutBtn.addEventListener('click', function(){
         console.log('hello');
         localStorage.removeItem('jwt');
-        localStorage.removeItem('userFirstName');
+        localStorage.removeItem('firstName');
         window.location.reload();
       })
       
@@ -57,6 +57,7 @@ export class JobListComponent implements OnInit {
     this.currentJobPost = job;
     this.jobsService.deleteJob(this.currentJobPost.id).subscribe(()=> {
       alert('Job has been deleted')
+      window.location.reload();
       // this.router.navigate(['/']);
     },err =>{
       console.log("Error")

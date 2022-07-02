@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
 
   this.loginForm = this.formBuilder.group({
-      email:[''],
+      username:[''],
       password:['']
     })
   }
@@ -29,20 +29,23 @@ export class LoginComponent implements OnInit {
  
 
   login(){
-    this.http.post("http://localhost:3000/login", this.loginForm.value)
+    this.http.post("http://localhost:4000/Users/authenticate", this.loginForm.value)
     .subscribe(response => {
-      const token = (<any>response).accessToken;
+      console.log(response);
+      const token = (<any>response).token;
       localStorage.setItem("jwt", token);
-      localStorage.setItem("userFirstName", (<any>response).user.firstName);
+      localStorage.setItem("firstName", (<any>response).firstName);
       this.invalidLogin = false;
       this.router.navigate(["/"]);
     },err => {
+      alert("Error")
+      console.log("Error")
       this.invalidLogin = true;
     }
     )
 
   }
-
+  // http://localhost:3000/login
 
 
 // this.loginForm = this.formBuilder.group({

@@ -25,6 +25,8 @@ export class SignUpComponent implements OnInit {
 this.signupForm = this.formBuilder.group({
   firstName:[''],
   lastName:[''],
+  username:[''],
+  role:[''],
   email:[''],
   password:['']
 
@@ -33,7 +35,7 @@ this.signupForm = this.formBuilder.group({
   }
 
   signUp(){
-    this.http.post("http://localhost:3000/users", this.signupForm.value).subscribe(res=> {
+    this.http.post("http://localhost:4000/users/register", this.signupForm.value).subscribe(res=> {
     alert("Signup Successful")
     this.signupForm.reset();  
     this.router.navigate(['/login']);
@@ -44,3 +46,4 @@ this.signupForm = this.formBuilder.group({
  
 
 }
+// http://localhost:3000/users
