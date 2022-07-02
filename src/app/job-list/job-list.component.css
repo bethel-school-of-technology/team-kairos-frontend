@@ -119,3 +119,7 @@ p{
   #frontPageDisplay + #search-container{
       padding-top: 5rem;
   }
+
+  #spacer {
+      padding: 20px;
+  }
