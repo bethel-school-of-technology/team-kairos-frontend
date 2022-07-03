@@ -26,6 +26,9 @@ export class EditJobComponent implements OnInit {
     console.log('edited')
     this.jobService.editJob(this.currentJobPost).subscribe(() => {
       this.routes.navigate(['/']);
+    },err =>{
+      alert("Please enter valid information");
+
     })
   }
 }
