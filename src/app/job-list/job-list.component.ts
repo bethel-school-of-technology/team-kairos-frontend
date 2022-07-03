@@ -36,7 +36,9 @@ export class JobListComponent implements OnInit {
     this.userFirstName = localStorage.getItem('firstName');
 
     this.jobsService.getJobList().subscribe(results =>
-      {this.JobPosts = results});
+      {this.JobPosts = results
+      console.log(results)});
+      
 
      
     
@@ -47,6 +49,7 @@ export class JobListComponent implements OnInit {
         localStorage.removeItem('firstName');
         window.location.reload();
       })
+      
   }
 
   deleteJob(job: JobPost){
@@ -86,5 +89,9 @@ export class JobListComponent implements OnInit {
     var modal = document.getElementById('jobModal' + job.id);
     // hide modal
     modal.style.display = 'block';
+    console.log(job.urlToJobApp);
+    // add URL to apply button
+    var applyLink = document.getElementById('applyLink' + job.id);
+    applyLink.setAttribute("href", job.urlToJobApp);
   }
 }

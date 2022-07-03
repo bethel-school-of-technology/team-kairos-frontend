@@ -33,7 +33,7 @@ export class JobsService {
   }
 
   editJob(job: JobPost){
-    return this.http.put(this.baseUrl, job)
+    return this.http.put(this.baseUrl + "/" + job.id, job)
   }
 
   find(id: Number){
