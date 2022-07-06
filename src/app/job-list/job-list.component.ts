@@ -46,7 +46,8 @@ export class JobListComponent implements OnInit {
         localStorage.removeItem('jwt');
         localStorage.removeItem('firstName');
         window.location.reload();
-      })
+        
+      });
   }
 
   deleteJob(job: JobPost){
